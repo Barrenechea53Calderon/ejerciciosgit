@@ -1,0 +1,42 @@
+# CLASE ESCANER
+
+
+class Escaner:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.documentos = []
+
+    def escanear(self, documento):
+        self.documentos.append(documento)
+        print(f"Documento '{documento}' escaneado y almacenado.")
+
+    def mostrar_documentos(self):
+        if self.documentos:
+            print("Documentos escaneados:")
+            for doc in self.documentos:
+                print(f"- {doc}")
+        else:
+            print("No hay documentos escaneados.")
+
+
+class Escaner:
+    def __init__(self, resolucion):
+        self._resolucion = resolucion
+
+    @property
+    def resolucion(self):
+        return self._resolucion
+
+    @resolucion.setter
+    def resolucion(self, valor):
+        if valor > 0:
+            self._resolucion = valor
+        else:
+            raise ValueError("La resolución debe ser un valor positivo")
+
+# Uso de la clase
+escaner = Escaner(300)
+print(escaner.resolucion)  # Salida: 300
+escaner.resolucion = 600
+print(escaner.resolucion)  # Salida: 600
