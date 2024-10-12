@@ -1,42 +1,23 @@
 class Vaporera:
     def __init__(self, marca, capacidad):
-        self._marca = marca
-        self._capacidad = capacidad
-        self._encendida = False
+        self.marca = marca
+        self.capacidad = capacidad
+        self.encendida = False
 
-    # Getter y Setter para marca
-    @property
-    def marca(self):
-        return self._marca
-
-    @marca.setter
-    def marca(self, marca):
-        self._marca = marca
-
-    # Getter y Setter para capacidad
-    @property
-    def capacidad(self):
-        return self._capacidad
-
-    @capacidad.setter
-    def capacidad(self, capacidad):
-        self._capacidad = capacidad
-
-    # Getter y Setter para encendida
-    @property
-    def encendida(self):
-        return self._encendida
-
-    @encendida.setter
-    def encendida(self, encendida):
-        self._encendida = encendida
-
-    # Método para encender la vaporera
     def encender(self):
-        self._encendida = True
-        print("La vaporera está encendida.")
+        if not self.encendida:
+            self.encendida = True
+            print("La vaporera está encendida.")
+        else:
+            print("La vaporera ya está encendida.")
 
-    # Método para apagar la vaporera
     def apagar(self):
-        self._encendida = False
-        print("La vaporera está apagada.")
+        if self.encendida:
+            self.encendida = False
+            print("La vaporera está apagada.")
+        else:
+            print("La vaporera ya está apagada.")
+
+    def __str__(self):
+        estado = "encendida" if self.encendida else "apagada"
+        return f"Vaporera(marca={self.marca}, capacidad={self.capacidad}L, estado={estado})"
