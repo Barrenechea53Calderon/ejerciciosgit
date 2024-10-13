@@ -1,0 +1,32 @@
+class Vaporera:
+    def __init__(self, marca, capacidad):
+        self._marca = marca
+        self._capacidad = capacidad
+        self._encendida = False
+
+    # Getter y Setter para marca
+    @property
+    def marca(self):
+        return self._marca
+
+    @marca.setter
+    def marca(self, marca):
+        self._marca = marca
+
+    # Getter y Setter para capacidad
+    @property
+    def capacidad(self):
+        return self._capacidad
+
+    @capacidad.setter
+    def capacidad(self, capacidad):
+        self._capacidad = capacidad
+
+    # Getter y Setter para encendida
+    @property
+    def encendida(self):
+        return self._encendida
+
+    @encendida.setter
+    def encendida(self, encendida):
+        self._encendida = 
